@@ -1,0 +1,1 @@
+FakeApps.Models.App = Backbone.Model.extend({});
