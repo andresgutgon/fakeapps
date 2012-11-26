@@ -3,7 +3,7 @@ class App < ActiveRecord::Base
 
   has_and_belongs_to_many :users
 
-  def to_json(options = {})
+  def as_json(options = {})
     super(options.merge(:only => [ :id, :name, :file_name ]))
   end  
 

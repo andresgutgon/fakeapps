@@ -1,14 +1,23 @@
 FakeApps.Routers.Apps = Backbone.Router.extend({
   routes: {
     "all-applications": "all",
-    "apps-installed-by/:slug": "installed",
+    "your-applications/:slug": "installed",
   },
 
   all: function() {    
-    var apps = new FakeApps.Collections.Apps().fetch();    
-    new FakeApps.Views.AppsList( { el : $(".content"), collection : apps } );
+    var apps = new FakeApps.Collections.Apps();    
+    var p = apps.fetch();
+    p.done(function () {
+      appsList = new FakeApps.Views.AppsList( { collection : apps } );      
+      appsList.render();
+    });    
   },
   installed: function(slug) {
-    alert("ka kita");
+    var apps = new FakeApps.Collections.InstalledApps([], { slug: slug });
+    var p = apps.fetch();
+    p.done(function () {
+      appsList = new FakeApps.Views.AppsList( { collection : apps } );      
+      appsList.render();
+    });    
   }
 });

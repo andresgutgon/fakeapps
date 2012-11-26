@@ -8,7 +8,7 @@ var FakeApps = {
   init: function(current_user) {
     this.router = new FakeApps.Routers.Apps();
 
-    new FakeApps.Views.Menu(current_user);
+    new FakeApps.Views.Menu(current_user, this.router);
 
     Backbone.history.start({pushState: true});
   }

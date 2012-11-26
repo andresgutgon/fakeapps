@@ -2,7 +2,7 @@ class AppController < ApplicationController
 	respond_to :html, :json
 
 	def index
-		respond_with(@apps = App.all)
+		respond_with(@apps = App.all)			
 	end
 
 	def apps_installed_by
