@@ -47,6 +47,7 @@ FakeApps.Views.AppItem = Backbone.View.extend({
           data: app_object,
           dataType: "json",
           success: function(data) {
+            self.$el.slideUp();
             self.$el.remove();             
             var counter = parseInt($('.your-apps-counter').html());
             if (data.install) {
