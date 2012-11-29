@@ -44,7 +44,7 @@ FakeApps.Views.AppItem = Backbone.View.extend({
         });
 
         $.ajax({
-          type: 'UPDATE',
+          type: 'POST',
           url: url,
           data: app_object,
           dataType: "json",
