@@ -30,7 +30,7 @@ namespace :db do
     num_apps = apps.length        
     begin
       apps.each do |app|        
-        Apps.create!(
+        App.create!(
           :name => app[:name],
           :file_name => app[:file_name]
         )
