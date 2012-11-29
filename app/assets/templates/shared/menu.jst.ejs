@@ -1,4 +1,4 @@
-<a href="#" id="all-apps" title="All Apps in MarketPlace">All Apps</a>
 <% if(current_user) { %>
-	<a href="#" id="your-apps" title="Your Installed Apps"><%= current_user.name %>'s Installed Apps <span class="your-apps-counter"><%= current_user.apps_counter %></span></a>
+	<a <% if(active_tab == "installed") { %>class="active"<% } %> href="#" id="your-apps" title="Your Installed Apps"><%= current_user.name %>'s Installed Apps <span class="your-apps-counter"><%= current_user.apps_counter %></span></a>
 <% } %>
+<a <% if(active_tab == "all") { %>class="active"<% } %>href="#" id="all-apps" title="All Apps in MarketPlace">All Apps</a>

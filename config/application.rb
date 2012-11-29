@@ -58,5 +58,8 @@ module Fakeapps
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'    
+    # sass
+    config.sass.preferred_syntax = :sass
+    config.compass.require "susy"
   end
 end

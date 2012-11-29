@@ -1,7 +1,9 @@
-<img src="<%= base_image %><%= app.file_name %>.png" alt="<%= app.name %>" width="80" heigth="80">
-<%= app.name %>
+<img src="<%= base_image %><%= app.file_name %>.png" alt="<%= app.name %>" width="60" heigth="60">
+<div>
 <% if (user_apps) { %>
-	<a href="#" class="install" data-url="/uninstall">UnInstall</a>	
+	<a href="#" class="install uninstall" data-url="/uninstall">UnInstall</a>	
 <% } else { %>
 	<a href="#" class="install" data-url="/install">Install</a>
 <% } %>
+<h3><span><%= app.name %></span></h3>
+</div>

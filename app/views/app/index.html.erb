@@ -1,6 +1,7 @@
 <%= content_for :javascript do -%>
   <%= javascript_tag do %>
     var apps = new FakeApps.Collections.Apps(<%= @apps.to_json.html_safe -%>);    
+    var bootstraped = true;
     new FakeApps.Views.AppsList( { collection : apps } );      
   <% end %>
 <% end -%>

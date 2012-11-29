@@ -9,7 +9,7 @@ var FakeApps = {
   	this.current_user = current_user;
     this.router = new FakeApps.Routers.Apps();
 
-    new FakeApps.Views.Menu(current_user, this.router);
+    new FakeApps.Views.Menu({active_tab : "all"});
 
     Backbone.history.start({pushState: true});
   }

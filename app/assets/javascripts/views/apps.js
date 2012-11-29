@@ -8,6 +8,7 @@ FakeApps.Views.AppsList = Backbone.View.extend({
          _.each(this.collection.models, function (app) {
           $(this.el).append(new FakeApps.Views.AppItem({model:app, user_apps : this.options.user_apps}).render().el);
         }, this);
+        console.log(this.collection.length);
         return this;
     }
 });
@@ -29,6 +30,7 @@ FakeApps.Views.AppItem = Backbone.View.extend({
         "click .install": "install_uninstall",        
     },    
     install_uninstall : function(ev) {
+        ev.preventDefault();
         var url = $(ev.target).data('url');
         var self = this;
         var app = this.model;
@@ -55,11 +57,11 @@ FakeApps.Views.AppItem = Backbone.View.extend({
             } else {
                 counter = counter - 1;    
             }
-
             if (counter <= 0 ) {
                 counter = 0;
             }
             $('.your-apps-counter').html( counter );
+            FakeApps.current_user.apps_counter = counter;
           }
         });
 

@@ -1,0 +1,152 @@
+@import "compass"
+
+@import "colors"
+@import "buttons"
+
+@import "susy"
+
+$total-columns  : 8             // a 12-column grid
+$column-width   : 4em            // each column is 4em wide
+$gutter-width   : 1em            // 1em gutters between columns
+$grid-padding   : $gutter-width
+
+li
+    :list-style none
+
+body
+    :background url("wood_pattern.jpg") repeat fixed left top transparent    
+    :font-family "Ubuntu Mono" 
+    :margin 0
+.logo
+    :background url("logo.png") no-repeat left top transparent
+    :height 80px
+    :width 273px
+    :display block
+    :text-indent 100%
+    :overflow hidden
+.user-menu 
+    :background-color $brown    
+    :margin-bottom .5em
+    +box-shadow(darken($dark_grey, 50%) 0px 1px 2px)
+    +gradient(lighten($brown, 10%), darken($brown, 5%))
+    ul 
+        :margin 0
+    li
+        :float right
+        :padding .3em
+        :margin 0 0 0 .3em
+        :color #fff
+        :font-size 0.9em
+        a, a:hover
+            :color #fff
+            :text-decoration none
+h1
+    :font-family "Wellfleet"
+    :width 100%
+    :text-align center
+    :margin 0 0 0.4em 0
+    :font-size 1.3em
+    :line-height 1.2
+    :color $brown
+    span
+        :font-size 1.4em
+        :color #D14836
+        +text-shadow(1px 0 0 $brown)
+
+.clearfix
+    +clearfix
+header, footer, .wrapper
+    // page acts as a container for our grid.
+    +container
+.main
+    +border-radius(0.4em)
+    +box-shadow($dark_grey 0px 1px 2px)
+    :background-color #FFF
+    :min-height 800px
+    background none repeat scroll 0 0 #F7F7F7
+.content:before
+    :content ""
+.content
+    :min-height 800px
+    :position relative
+    &.empty:before
+        :left 0
+        :top 0
+        :position absolute
+        :content "No Apps"
+        :font-size 4em
+        :color #E2E2E2
+        :font-weight bold
+        :text-align center
+        :margin-top 4em
+        +text-shadow(1px 4px 0 #ccc)
+        :width 100%
+
+    
+.install
+    :margin-top 0.4em
+    +button
+    +color(#4787ED)
+    &.uninstall
+        +color(#D14836)
+nav    
+    :margin-bottom 1em
+    :padding-top 1em
+    :padding-bottom 0.6em
+    :border-bottom 1px solid #e2e2e2
+    a, a:hover
+        :background-color #f0f0f0
+        :display block
+        :float right
+        :margin 0 0 0 0.8em
+        :padding .5em 0.9em
+        background-color 
+        +border-radius(0.3em) 
+        font-style 0.9em
+        :color $dark_grey  
+        :text-decoration none
+        &#all-apps
+            :padding 1em 0.9em
+        &.active
+            :background-color $dark_grey
+            :color #fff            
+
+        .your-apps-counter
+            :display inline-block
+            :padding .5em
+            :background-color #D14836
+            :color #fff
+            +text-shadow(0px 1px 0 darken(#D14836, 60%))
+            +gradient(lighten(#D14836, 1%), darken(#D14836, 15%))
+            +border-radius(0.3em) 
+            :min-width 16px
+            :text-align center
+
+.wrapper_c    
+    +span-columns(8 omega,8)
+    //+susy-grid-background
+    article
+        +span-columns(2,8)
+        :height 150px
+        :text-align center
+        &:nth-child(4n) 
+            +omega            
+        img
+            :vertical-align middle
+        h3
+            :margin 0.2em 0 0 0
+            :font-weight normal
+            font-style 0.9em 
+            :min-height 45px
+            span
+                :vertical-align middle
+                :display inline-block
+
+
+footer, footer a
+    :margin-top 1.5em
+    :margin-bottom 1.5em
+    :text-align right
+    :font-style 0.7em
+    :color $brown
+    +text-shadow(1px 0 0 rgba(255, 255, 255, 0.8))

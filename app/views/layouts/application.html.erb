@@ -8,29 +8,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
   	<title>Fakeapps</title>
   	<%= csrf_meta_tags %>
+  	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
   	<%= stylesheet_link_tag "application", :media => "all" %>  
-	<%= javascript_include_tag "application" %>
 </head>
 <body>
+	<div class="user-menu">
+		<div class="wrapper">
+			<ul class="wrapper_c">			
+				<li><a href="#" title="LogOut">LogOut</a></li>
+				<li>Hi, <%= current_user.full_name %></li>
+			</ul>
+		</div>
+	</div>
 	<header>
 		<div class="logo">FakeApps</div>
-		<ul class="user-menu">			
-			<li>Hi, <%= current_user.full_name %></li>
-			<li><a href="#" title="LogOut">LogOut</a></li>
-		</ul>
 	</header>
-	<div role="main">
-		<div class="claim">The most useless marketplace in the world</div>
-		<nav></nav>
-		<div class="content">Cargando ...</div>
+	<div class="wrapper">
+		<h1 class="wrapper_c">The most <span>useless</span> marketplace in the world</h1>
+	</div>
+	<div class="wrapper main">
+		<nav class="clearfix"></nav>		
+		<div class="wrapper_c content">Cargando ...</div>		
 	</div>
 
 	<footer>
-		Made By <a href="www.twitter.com/andresgutgon" title="@andresgutgon">@andresgutgon</a>
+		<div class="wrapper_c ">
+			Made By <%= link_to "@andresgutgon", "http://www.twitter.com/andresgutgon", {:target => "_blank", :title =>"@andresgutgon"} %></a>
+		</div>
 	</footer>
 	<%= yield %>
+	<%= javascript_include_tag "application" %>
 	<%= javascript_tag do %>
-		FakeApps.init(<%= current_user.to_json.html_safe -%>);		
+		FakeApps.init(<%= current_user.to_json.html_safe -%>);				
 	<% end %>	
 	<%= yield :javascript %>
 
