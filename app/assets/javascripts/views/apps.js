@@ -30,6 +30,7 @@ FakeApps.Views.AppItem = Backbone.View.extend({
         "click .install": "install_uninstall",        
     },    
     install_uninstall : function(ev) {
+        ev.preventDefault();
         var url = $(ev.target).data('url');
         var self = this;
         var app = this.model;
