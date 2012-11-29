@@ -13,9 +13,9 @@ gem 'pg'
 # in production environments by default.
 gem 'sass-rails',   '~> 3.2.3'
 group :assets do
-  gem 'susy'
-  gem 'compass-rails'
   # gem 'coffee-rails', '~> 3.2.1'
+gem 'compass-rails'
+gem 'susy'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
